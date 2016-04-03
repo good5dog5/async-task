@@ -24,8 +24,8 @@ int set_fd_polling(int queue, int fd, int action, long milliseconds)
 {
     struct epoll_event chevent;
     chevent.data.fd = fd;
-    chevent.events = EPOLLOUT | EPOLLIN |
-                     EPOLLET | EPOLLERR |
+    chevent.events = EPOLLOUT   | EPOLLIN  |
+                     EPOLLET    | EPOLLERR |
                      EPOLLRDHUP | EPOLLHUP;
     if (milliseconds) {
         struct itimerspec newtime;
